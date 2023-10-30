@@ -14,19 +14,14 @@ public class StringsAndThings {
      *           countYZ("day fez"); // Should return 2
      *           countYZ("day fyyyz"); // Should return 2
      */
+    public Integer countYZ(String input){
         //any input turn in to string arry
-    String[] str = input.split("")
+    String[] str = input.split("");
             int count =0;
         // for loop to then of the string.
-    for (int i = 0; i < str.lenght ; i++){
-        string word =str[i];
-        public Integer countYZ(String input){
-            //Break string into array of words
-            String[] str = input.split(" ");
-            int count = 0;
-            for (int i = 0; i < str.length; i++){ // for loop
-                String word = str[i];
-                if (word.endsWith("y") || word.endsWith("z")){
+    for(int i = 0; i < str.length; i++){
+        String word =str[i];
+          if (word.endsWith("y") || word.endsWith("z")){
                     count++;
                 }
             }
@@ -37,7 +32,7 @@ public class StringsAndThings {
         // return
 
 
-    public Integer countYZ(String input){
+
         return null;
     }
 
