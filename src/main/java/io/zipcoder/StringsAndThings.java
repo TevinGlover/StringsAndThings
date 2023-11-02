@@ -16,22 +16,27 @@ public class StringsAndThings {
      */
     public Integer countYZ(String input) {
 
-        int count = 0;
-        String Alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-        if (input.endsWith("y")) {
-            // end of the word look for Z && z || Y && y.
-            count++;
-        } else if (input.endsWith("z")) {
-            count++;
-        } else if (input.endsWith("Y")) {
-            count++;
-        } else if (input.endsWith("Z")) {
-            count++;
-        } else if (input.equalsIgnoreCase(Alphabet)) {
-        } else {
-        }
-        return count;// return
+        int count = 0;
+
+        String Alphabet = "abcdefghijklmnopqrstuvwxyz";
+        // need a way to see the end of a words between space.
+        for (int i = 0; i <input.length() ; i++) {
+            if (input.equalsIgnoreCase(Alphabet)) {
+              break;
+                // ignore alphabet then return,
+            } else if (input.endsWith("y")) {
+                count++;// end of the word look for Z && z || Y && y.
+            } else if (input.endsWith("Y")) {
+                count++;
+            } else if (input.endsWith("Z")) {
+                count++;
+            } else if  (input.endsWith("z")){
+                count++;
+            } else {
+            }
+
+        }return count;// return
     }
 
 
