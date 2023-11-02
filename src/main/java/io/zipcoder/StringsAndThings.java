@@ -11,32 +11,30 @@ public class StringsAndThings {
      * but not the 'y' in "yellow" (not case sensitive). We'll say that a y or z is at the end of a word if there is not an alphabetic
      * letter immediately following it. (Note: Character.isLetter(char) tests if a char is an alphabetic letter.)
      * example : countYZ("fez day"); // Should return 2
-     *           countYZ("day fez"); // Should return 2
-     *           countYZ("day fyyyz"); // Should return 2
+     * countYZ("day fez"); // Should return 2
+     * countYZ("day fyyyz"); // Should return 2
      */
-    public Integer countYZ(String input){
-        //any input turn in to string arry
-    String[] str = input.split("");
-            int count =0;
-        // for loop to then of the string.
-    for(int i = 0; i < str.length; i++){
-        String word =str[i];
-          if (word.endsWith("y") || word.endsWith("z")){
-                    count++;
-                }
-            }
-            return count;
+    public Integer countYZ(String input) {
+
+        int count = 0;
+        String Alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+        if (input.endsWith("y")) {
+            // end of the word look for Z && z || Y && y.
+            count++;
+        } else if (input.endsWith("z")) {
+            count++;
+        } else if (input.endsWith("Y")) {
+            count++;
+        } else if (input.endsWith("Z")) {
+            count++;
+        } else if (input.equalsIgnoreCase(Alphabet)) {
+        } else {
         }
-        // end of the word look for Z && z || Y && y.
-
-        // return
-
-
-
-        return null;
+        return count;// return
     }
-
-    /**
+}
+    /*
      * Given two strings, base and remove, return a version of the base string where all instances of the remove string have
      * been removed (not case sensitive). You may assume that the remove string is length 1 or more.
      * Remove only non-overlapping instances, so with "xxx" removing "xx" leaves "x".
@@ -45,7 +43,10 @@ public class StringsAndThings {
      *           removeString("Hello there", "e") //  Should return "Hllo thr"
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
+    /*
     public String removeString(String base, String remove){
+        
+
         return null;
     }
 
@@ -57,6 +58,8 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
+
+    /*
     public Boolean containsEqualNumberOfIsAndNot(String input){
         return null;
     }
@@ -68,6 +71,8 @@ public class StringsAndThings {
      *           gHappy("xxgxx") // Should return  false
      *           gHappy("xxggyygxx") // Should return  false
      */
+
+    /*
     public Boolean gIsHappy(String input){
         return null;
     }
@@ -80,7 +85,9 @@ public class StringsAndThings {
      *            countTriple("xxxabyyyycd") // Should return 3
      *            countTriple("a") // Should return 0
      */
+    /*
     public Integer countTriple(String input){
         return null;
     }
 }
+*/
