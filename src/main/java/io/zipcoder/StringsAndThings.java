@@ -21,11 +21,11 @@ public class StringsAndThings {
 
         String Alphabet = "abcdefghijklmnopqrstuvwxyz";
         // need a way to see the end of a words between space.
-        String [] word = input.split(" ");
+        String[] word = input.split(" ");
 
-        for (int i = 0; i <word.length ; i++) {
+        for (int i = 0; i < word.length; i++) {
             if (input.equalsIgnoreCase(Alphabet)) {
-              break;
+                break;
                 // ignore alphabet then return,
             } else if (word[i].trim().toLowerCase().endsWith("y")) {
                 count++;// end of the word look for  z || Y && y.
@@ -34,66 +34,88 @@ public class StringsAndThings {
             } else {
             }
 
-        }return count;// return
+        }
+        return count;// return
     }
 
 
-     /** Given two strings, base and remove, return a version of the base string where all instances of the remove string have
+    /**
+     * Given two strings, base and remove, return a version of the base string where all instances of the remove string have
      * been removed (not case-sensitive). You may assume that the remove string is length 1 or more.
      * Remove only non-overlapping instances, so with "xxx" removing "xx" leaves "x".
-     *
+     * <p>
      * example : removeString("Hello there", "llo") // Should return "He there"
-     *           removeString("Hello there", "e") //  Should return "Hllo thr"
-     *           removeString("Hello there", "x") // Should return "Hello there"
+     * removeString("Hello there", "e") //  Should return "Hllo thr"
+     * removeString("Hello there", "x") // Should return "Hello there"
      */
-     //*********************************************************************************************
-    public String removeString(String base, String remove){
+    //*********************************************************************************************
+    public String removeString(String base, String remove) {
 
 
-
-         return base.replace(remove,"");
+        return base.replace(remove, "");
     }
 //**************************************************************************************************
+
     /**
      * Given a string, return true if the number of appearances of "is" anywhere in the string is equal
      * to the number of appearances of "not" anywhere in the string (case-sensitive)
-     *
+     * <p>
      * example : containsEqualNumberOfIsAndNot("This is not")  // Should return false
-     *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
-     *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
+     * containsEqualNumberOfIsAndNot("This is notnot") // Should return true
+     * containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
 
 
-    public Boolean containsEqualNumberOfIsAndNot(String input){
+    public Boolean containsEqualNumberOfIsAndNot(String input) {
         //  check the string input and see if there is a (is) in the string.
-            int isCount = (input.length() - input.replace("is", "").length()) / 2;// cuntsum /2
-            int notCount = (input.length() - input.replace("not", "").length()) / 3;// cuntsum /3
-            return (isCount == notCount);// not sum = is sum
+        int isCount = (input.length() - input.replace("is", "").length()) / 2;// cuntsum /2
+        int notCount = (input.length() - input.replace("not", "").length()) / 3;// cuntsum /3
+        return (isCount == notCount);// not sum = is sum
+    }
 //******************************************************************************
-    /**
-     * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
-     * Return true if all the g's in the given string are happy.
-     * example : gHappy("xxggxx") // Should return  true
-     *           gHappy("xxgxx") // Should return  false
-     *           gHappy("xxggyygxx") // Should return  false
-     */
+        /**
+         * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
+         * Return true if all the g's in the given string are happy.
+         * example : gHappy("xxggxx") // Should return  true
+         *           gHappy("xxgxx") // Should return  false
+         *           gHappy("xxggyygxx") // Should return  false
+         */
 
 
-    public Boolean gIsHappy(String input){
+        public Boolean gIsHappy (String input){
+            boolean t = false;
+            if( input.contains("gg")){// if gg is found then return true.
+                t = true;
+            }
+            return t;
+        }
+//**************************************************************
 
-        return null;
-    }
+        /**
+         * We'll say that a "triple" in a string is a char appearing three times in a row.
+         * Return the number of triples in the given string. The triples may overlap.
+         * example :  countTriple("abcXXXabc") // Should return 1
+         *            countTriple("xxxabyyyycd") // Should return 3
+         *            countTriple("a") // Should return 0
+         */
 
+        public Integer countTriple (String input) {
 
-    /**
-     * We'll say that a "triple" in a string is a char appearing three times in a row.
-     * Return the number of triples in the given string. The triples may overlap.
-     * example :  countTriple("abcXXXabc") // Should return 1
-     *            countTriple("xxxabyyyycd") // Should return 3
-     *            countTriple("a") // Should return 0
-     */
+            int count = 0;   // repeat (3) counter of a char.
+            String[] triple = input.split("");// input --> []
+            // im of setting the if setting, the if statement by -2.
+            for (int i = 0; i < triple.length - 2; i++) { // run through the array and find char that repeat 3times left or right.
+                // if (triple[i] = i + 1 & triple [i]+2)
+                if (triple[i].equals(triple[i + 1]) && triple[i].equals(triple[i + 2])) {
+                    // array object 1= triple[i], obj 2 [i2], obj3 [i3]
+                    count++;
 
-    public Integer countTriple(String input){
-        return null;
-    }
+                }
+                System.out.println();
+
+            }
+            return count;
+        }
 }
+
+
