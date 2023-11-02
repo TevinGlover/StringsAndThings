@@ -46,15 +46,14 @@ public class StringsAndThings {
      *           removeString("Hello there", "e") //  Should return "Hllo thr"
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
-
+     //*********************************************************************************************
     public String removeString(String base, String remove){
 
-        //i want to go through a list of sting Base and Remove the String char that is equal to String removal.
-            // string base turned in to an array
-        // stringbluider
-        return null;
-    }
 
+
+         return base.replace(remove,"");
+    }
+//**************************************************************************************************
     /**
      * Given a string, return true if the number of appearances of "is" anywhere in the string is equal
      * to the number of appearances of "not" anywhere in the string (case-sensitive)
@@ -66,9 +65,11 @@ public class StringsAndThings {
 
 
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
-    }
-
+        //  check the string input and see if there is a (is) in the string.
+            int isCount = (input.length() - input.replace("is", "").length()) / 2;// cuntsum /2
+            int notCount = (input.length() - input.replace("not", "").length()) / 3;// cuntsum /3
+            return (isCount == notCount);// not sum = is sum
+//******************************************************************************
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
      * Return true if all the g's in the given string are happy.
@@ -79,6 +80,7 @@ public class StringsAndThings {
 
 
     public Boolean gIsHappy(String input){
+
         return null;
     }
 
